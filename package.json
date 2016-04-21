@@ -1,0 +1,25 @@
+{
+  "name": "eslint-plugin-redux-saga",
+  "version": "1.0.0",
+  "description": "redux-saga eslint rules",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:pke/eslint-plugin-redux-saga.git"
+  },
+  "scripts": {
+    "test": "tests/best-before.js"
+  },
+  "peerDependencies": {
+    "redux-saga": "^0.9.5"
+  },
+  "devDependencies": {
+    "eslint": "^2.8.0",
+    "redux-saga": "^0.9.5"
+  },
+  "keywords": [
+    "eslint",
+    "eslint-plugin",
+    "eslintplugin",
+    "redux-saga"
+  ]
+}
