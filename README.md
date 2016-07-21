@@ -1,7 +1,8 @@
 # eslint-plugin-redux-saga
 
-[![Build Status](https://travis-ci.org/pke/eslint-plugin-redux-saga.svg?branch=master)](https://travis-ci.org/pke/eslint-plugin-redux-saga)
-[![npm version](https://badge.fury.io/js/eslint-plugin-redux-saga.svg)](https://badge.fury.io/js/eslint-plugin-redux-saga)
+[![Build Status](https://img.shields.io/travis/pke/eslint-plugin-redux-saga/master.svg?style=flat-square)](https://travis-ci.org/pke/eslint-plugin-redux-saga)
+[![npm version](https://img.shields.io/npm/v/eslint-plugin-redux-saga.svg?style=flat-square)](https://badge.fury.io/js/eslint-plugin-redux-saga)
+[![License](https://img.shields.io/npm/l/eslint-plugin-redux-saga.svg?style=flat-square)](LICENSE)
 
 [ESLint](https://github.com/eslint/eslint) rules for [redux-saga](https://github.com/yelouafi/redux-saga).
 
