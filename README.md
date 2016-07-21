@@ -5,4 +5,4 @@
 ## Rules
 
 * Ensure effects are yielded - [yield-effects](docs/rules/yield-effects.md)
-* Prevent usage of yield in race entries - [no-yield-in-race](docs/rules/no-yield-in-race)
+* Prevent usage of yield in race entries - [no-yield-in-race](docs/rules/no-yield-in-race.md)
