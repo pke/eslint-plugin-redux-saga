@@ -11,8 +11,8 @@
   },
   "homepage": "https://github.com/pke/eslint-plugin-redux-saga",
   "scripts": {
-    "test": "mocha --recursive --colors",
-    "start": "mocha --watch --recursive"
+    "pretest": "eslint lib test",
+    "test": "mocha --recursive --colors"
   },
   "peerDependencies": {
     "eslint": "2.x - 3.x",

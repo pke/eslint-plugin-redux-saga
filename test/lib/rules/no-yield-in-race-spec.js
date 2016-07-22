@@ -17,11 +17,11 @@ ruleTester.run("no-yield-in-race", rule, {
     {
       code: "function* test() { yield race({ posts: yield call(fetchApis) }) }",
       output: "function* test() { yield race({ posts: call(fetchApis) }) }",
-      errors: [{message: "yield not allowed inside race: posts"}]
+      errors: ["yield not allowed inside race: posts"]
     },
     {
       code: "function* test() { yield race({ watchers: yield [call(watcher1), call(watcher2)] }) }",
-      errors: [{message: "yield not allowed inside race: watchers"}],
+      errors: ["yield not allowed inside race: watchers"],
       output: "function* test() { yield race({ watchers: [call(watcher1), call(watcher2)] }) }"
     }
   ]
