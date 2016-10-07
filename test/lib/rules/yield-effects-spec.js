@@ -16,6 +16,9 @@ ruleTester.run("yield-effects", rule, {
       code: buildTest("import { take } from 'redux-saga'", "yield take('ACTION')")
     },
     {
+      code: buildTest("import { take } from 'redux-saga/effects'", "yield take('ACTION')")
+    },
+    {
       code: buildTest("import { take as t } from 'redux-saga'", "yield t('ACTION')")
     },
     {
