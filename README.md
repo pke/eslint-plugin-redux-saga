@@ -10,3 +10,4 @@
 
 * Ensure effects are yielded - [yield-effects](docs/rules/yield-effects.md)
 * Prevent usage of yield in race entries - [no-yield-in-race](docs/rules/no-yield-in-race.md)
+* Ensures error handling on sagas - [no-unhandled-errors](docs/rules/no-unhandled-errors.md)
