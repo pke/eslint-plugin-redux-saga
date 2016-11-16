@@ -3,6 +3,9 @@
   "version": "0.2.0",
   "description": "redux-saga eslint rules",
   "author": "Philipp Kursawe <phil.kursawe+npm@gmail.com",
+  "contributors": [
+    { "name": "Nicolas Fernandez", "url": "https://github.com/burabure" }
+  ],
   "main": "index.js",
   "files": [
     "LICENSE",
