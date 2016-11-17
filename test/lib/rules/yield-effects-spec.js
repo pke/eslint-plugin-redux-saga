@@ -33,6 +33,12 @@ ruleTester.run("yield-effects", rule, {
     },
     {
       code: buildTest("import { noop } from 'redux-saga'", "noop()")
+    },
+    {
+      code: buildTest(
+        "import { call } from 'redux-saga'",
+        "const [foo, bar] = yield [call(something), call(somethingElse)]"
+      )
     }
   ],
   invalid: [
