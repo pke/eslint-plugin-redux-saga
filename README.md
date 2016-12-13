@@ -6,6 +6,23 @@
 
 [ESLint](https://github.com/eslint/eslint) rules for [redux-saga](https://github.com/yelouafi/redux-saga).
 
+## Usage
+
+Install the plugin:
+
+`npm i -D eslint-plugin-redux-saga`
+
+And add it to your `.eslintrc` file:
+
+```json
+{
+  "plugins": [
+    "redux-saga"
+  ]
+}
+```
+
+ 
 ## Rules
 
 * Ensure effects are yielded - [yield-effects](docs/rules/yield-effects.md)
