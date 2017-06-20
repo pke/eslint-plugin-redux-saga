@@ -30,3 +30,15 @@ And add it to your `.eslintrc` file:
 * Ensure effects are yielded - [yield-effects](docs/rules/yield-effects.md)
 * Prevent usage of yield in race entries - [no-yield-in-race](docs/rules/no-yield-in-race.md)
 * Ensures error handling on sagas - [no-unhandled-errors](docs/rules/no-unhandled-errors.md)
+
+## Recommended configuration
+
+This plugin exports the `recommended` configuration that enforces all the rules. To use it, add following property to `.eslintrc` file:
+
+```json
+{
+  "extends": [
+    "plugin:redux-saga/recommended"
+  ]
+}
+```
