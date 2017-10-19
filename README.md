@@ -12,7 +12,13 @@
 
 Install the plugin:
 
+**npm**
+
 `npm i -D eslint-plugin-redux-saga`
+
+**yarn**
+
+`yarn add -D eslint-plugin-redux-saga`
 
 And add it to your `.eslintrc` file:
 
