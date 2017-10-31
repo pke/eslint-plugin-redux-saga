@@ -16,14 +16,24 @@ ruleTester.run("yield-effects", rule, {
       code: buildTest("import { take } from 'redux-saga'", "yield take('ACTION')")
     },
     {
+      code: buildTest("import { delay } from 'redux-saga'", "yield delay(1000)")
+    },
+    {
       code: buildTest("import { take } from 'redux-saga/effects'", "yield take('ACTION')")
     },
     {
       code: buildTest("import { take as t } from 'redux-saga'", "yield t('ACTION')")
     },
     {
+      code: buildTest("import { delay as d } from 'redux-saga'", "yield d(1000)")
+    },
+    {
       // If it is an effect name but not imported from `redux-saga` then its valid
       code: buildTest(null, "take('ACTION')")
+    },
+    {
+      // If it is an effect name but not imported from `redux-saga` then its valid
+      code: buildTest(null, "delay(1000)")
     },
     {
       code: buildTest("import { take } from 'redux-saga'", "notAnEffectDoesNotNeedYield()")
@@ -48,9 +58,19 @@ ruleTester.run("yield-effects", rule, {
       errors: [{message: "take effect must be yielded"}]
     },
     {
+      code: buildTest("import { delay } from 'redux-saga'", "delay('ACTION')"),
+      output: buildTest("import { delay } from 'redux-saga'", "yield delay('ACTION')"),
+      errors: [{message: "delay effect must be yielded"}]
+    },
+    {
       code: buildTest("import { take as t } from 'redux-saga'", "t('ACTION')"),
       output: buildTest("import { take as t } from 'redux-saga'", "yield t('ACTION')"),
       errors: [{message: "t (take) effect must be yielded"}]
+    },
+    {
+      code: buildTest("import { delay as d } from 'redux-saga'", "d('ACTION')"),
+      output: buildTest("import { delay as d } from 'redux-saga'", "yield d('ACTION')"),
+      errors: [{message: "d (delay) effect must be yielded"}]
     }
   ]
 })
