@@ -35,7 +35,7 @@
   },
   "devDependencies": {
     "eslint": "4.2.0",
-    "mocha": "3.5.3",
+    "mocha": "~4.0.1",
     "redux-saga": ">= 0.11.1 < 1"
   },
   "keywords": [
