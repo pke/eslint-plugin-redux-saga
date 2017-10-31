@@ -2,8 +2,10 @@
     "env": {
         "node": true
     },
-    "ecmaFeatures": {
+    "parserOptions": {
+      "ecmaFeatures": {
         "jsx": true
+      }
     },
     "globals": {
     },
