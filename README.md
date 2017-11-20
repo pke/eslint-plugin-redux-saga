@@ -12,11 +12,11 @@
 
 Install the plugin:
 
-**npm**
+### npm
 
 `npm i -D eslint-plugin-redux-saga`
 
-**yarn**
+### yarn
 
 `yarn add -D eslint-plugin-redux-saga`
 
@@ -30,12 +30,13 @@ And add it to your `.eslintrc` file:
 }
 ```
 
- 
 ## Rules
 
-* Ensure effects are yielded - [yield-effects](docs/rules/yield-effects.md)
-* Prevent usage of yield in race entries - [no-yield-in-race](docs/rules/no-yield-in-race.md)
-* Ensures error handling on sagas - [no-unhandled-errors](docs/rules/no-unhandled-errors.md)
+| Rule | Description | Recommended | Fixable |
+|-------------|------|-------------|---------|
+| [yield-effects](docs/rules/yield-effects.md) | Ensure effects are yielded | ![recommended](https://img.shields.io/badge/-recommended-lightgrey.svg) | ![fixable](https://img.shields.io/badge/-fixable-green.svg) |
+| [no-yield-in-race](docs/rules/no-yield-in-race.md) | Prevent usage of yield in race entries | ![recommended](https://img.shields.io/badge/-recommended-lightgrey.svg) | ![fixable](https://img.shields.io/badge/-fixable-green.svg)
+| [no-unhandled-errors](docs/rules/no-unhandled-errors.md) | Ensures error handling on sagas | ![recommended](https://img.shields.io/badge/-recommended-lightgrey.svg) |
 
 ## Recommended configuration
 
