@@ -1,6 +1,6 @@
 # Ensures error handling on sagas
 
-**recommended**
+![](https://img.shields.io/badge/-recommended-lightgrey.svg "recommended")
 
 This rule ensures that all `redux-saga` effects are inside a try/catch block for error handling.
 

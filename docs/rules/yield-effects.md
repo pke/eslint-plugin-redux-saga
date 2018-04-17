@@ -1,10 +1,6 @@
 # Ensures effects are yielded (yield-effects)
 
-**recommended**
-
-**fixable**<br>
-The `--fix` option on the command line automatically fixes problems reported by this rule.
-
+![](https://img.shields.io/badge/-recommended-lightgrey.svg "recommended") ![fixable](https://img.shields.io/badge/-fixable-green.svg "The `--fix` option on the command line automatically fixes problems reported by this rule.")
 
 This rule ensures that all `redux-saga` effects are properly `yield`'ed.
 
@@ -23,3 +19,5 @@ function* bad() {
   take("action")
 }
 ```
+
+The `--fix` option on the command line automatically fixes problems reported by this rule.
