@@ -49,6 +49,28 @@ ruleTester.run("yield-effects", rule, {
         "import { call } from 'redux-saga'",
         "const [foo, bar] = yield [call(something), call(somethingElse)]"
       )
+    },
+    {
+      code:
+        "import { put } from 'redux-saga';\n" +
+        "expect(generator.next().value).toEqual(put({}));"
+    },
+    {
+      code: buildTest(
+        "import { call, all, delay, fetchResources } from 'redux-saga'",
+        "yield all([" +
+          "call(fetchResource, 'users')," +
+          "call(fetchResource, 'comments')," +
+          "call(delay, 1000)" +
+        "])"
+      )
+    },
+    {
+      code:
+        "import { takeEvery } from 'redux-saga';\n" +
+        "export const fooSagas = [" +
+          "takeEvery('FOO_A', fooASaga)," +
+          "takeEvery('FOO_B', fooBSaga)];"
     }
   ],
   invalid: [

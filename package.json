@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-redux-saga",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "redux-saga eslint rules",
   "author": "Philipp Kursawe <phil.kursawe+npm@gmail.com",
   "contributors": [
@@ -26,7 +26,8 @@
   "homepage": "https://github.com/pke/eslint-plugin-redux-saga",
   "scripts": {
     "lint": "eslint ./",
-    "test": "npm run lint && mocha --recursive --colors",
+    "pretest": "npm run lint",
+    "test": "mocha --recursive --colors",
     "start": "mocha --watch --recursive --colors"
   },
   "peerDependencies": {
@@ -44,5 +45,6 @@
     "eslintplugin",
     "redux-saga"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {}
 }
