@@ -53,6 +53,20 @@ ruleTester.run("no-unhandled-errors", rule, {
         "import { call } from 'redux-saga'",
         "try { someStuff() } catch (e) { yield call('ACTION') }"
       )
+    },
+    {
+      code: buildTest(
+        "import { call, fork } from 'redux-saga/effects'",
+        "yield fork(function*(){})"
+      )
+    },
+    {
+      code: buildTest(
+        "import { takeEvery, takeLatest, throttle } from 'redux-saga'",
+        "yield takeEvery('ACTION', function*(){});" +
+        "yield takeLatest('ACTION', function*(){});" +
+        "yield throttle('ACTION', function*(){})"
+      )
     }
   ],
   invalid: [
