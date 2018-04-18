@@ -27,7 +27,8 @@
   "scripts": {
     "lint": "eslint ./",
     "pretest": "npm run lint",
-    "test": "mocha --recursive --colors",
+    "mocha": "mocha --recursive --colors",
+    "test": "npm run mocha",
     "start": "mocha --watch --recursive --colors"
   },
   "peerDependencies": {
