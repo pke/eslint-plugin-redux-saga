@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-redux-saga",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "redux-saga eslint rules",
   "author": "Philipp Kursawe <phil.kursawe+npm@gmail.com",
   "contributors": [
