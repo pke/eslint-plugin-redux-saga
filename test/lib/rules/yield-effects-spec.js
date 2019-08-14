@@ -59,9 +59,9 @@ ruleTester.run("yield-effects", rule, {
       code: buildTest(
         "import { call, all, delay, fetchResources } from 'redux-saga'",
         "yield all([" +
-          "call(fetchResource, 'users')," +
-          "call(fetchResource, 'comments')," +
-          "call(delay, 1000)" +
+        "call(fetchResource, 'users')," +
+        "call(fetchResource, 'comments')," +
+        "call(delay, 1000)" +
         "])"
       )
     },
@@ -69,8 +69,17 @@ ruleTester.run("yield-effects", rule, {
       code:
         "import { takeEvery } from 'redux-saga';\n" +
         "export const fooSagas = [" +
-          "takeEvery('FOO_A', fooASaga)," +
-          "takeEvery('FOO_B', fooBSaga)];"
+        "takeEvery('FOO_A', fooASaga)," +
+        "takeEvery('FOO_B', fooBSaga)];"
+    },
+    {
+      code:
+        "import { call } from 'redux-saga';\n" +
+        "export class FooSaga {" +
+        "static* someSaga() {" +
+        "  yield call(() => {})" +
+        "}" +
+        "}"
     }
   ],
   invalid: [
@@ -93,6 +102,23 @@ ruleTester.run("yield-effects", rule, {
       code: buildTest("import { delay as d } from 'redux-saga'", "d('ACTION')"),
       output: buildTest("import { delay as d } from 'redux-saga'", "yield d('ACTION')"),
       errors: [{message: "d (delay) effect must be yielded"}]
+    },
+    {
+      code:
+        "import { call } from 'redux-saga';\n" +
+        "export class FooSaga {" +
+        "static* someSaga() {" +
+        "  call(() => {})" +
+        "}" +
+        "}",
+      output:
+        "import { call } from 'redux-saga';\n" +
+        "export class FooSaga {" +
+        "static* someSaga() {" +
+        "  yield call(() => {})" +
+        "}" +
+        "}",
+      errors: [{message: "call effect must be yielded"}]
     }
   ]
 })
