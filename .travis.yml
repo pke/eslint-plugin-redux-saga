@@ -1,9 +1,16 @@
 language: node_js
 node_js:
-  - 6.2.0
-  - 10
+- 6.2.0
+- 10
 env:
   matrix:
-    - REDUX_SAGA_VERSION=^0.11.1
-    - REDUX_SAGA_VERSION=^1.0.0
+  - REDUX_SAGA_VERSION=^0.11.1
+  - REDUX_SAGA_VERSION=^1.0.0
 after_install: npm install redux-saga@${REDUX_SAGA_VERSION}
+deploy:
+  provider: npm
+  email: phil.kursawe+npm@gmail.com
+  api_key:
+    secure: a4d8pS+lYedubkeY+wUu3ruOCRRcTLXSfMwcE5vtDIX0jyuzEtsGNzdl77EufQHPfWPC9aCTguZgOgVj2pRGVs+Mzu9VQ43kV0KWoqcmD8gNms8A4MerZjJTemfPNUC/mu/c0qCRtL0AFiFS3NNI5TzYh91vGc5kyxx099IUTIW093H2tMoSYMhEQICrs6dMFUtMb+ue4ohQbil8A6hDMzxa9zn82Y0mpvwFU/lB95wHoNbvqf1vWBHZo8GNiUEyEUJLNt5ub3zXX0tn8/ROcfHW3wVjtBvHYRjbuO/5OWKDOX2NHPOOSKCbNnY7R/OlJldm2Exg6B1KyutmAriNmiihTQHPectw0ZnTrsIRppE3TRU7rysjAk9e5OgxLAX5ryYDKGj7+ejOQ50PU50G7WBQaCjd9Ju8LyNML5yZXZrvwFZ32vGRunG7NxMH3ZwR3g7lrlWJI1PfXG7dKX4Hegb+q6NtCeCs7QONFRulzI8gcoJ1dsi3XkfZGKRAmDtyctsk3TAV0VOLoy97O/dIKn5ORuAEjMtJpXdyB+xIXVQMyCqEarxzSgj9k+EzHUjorsU933b7Ll2eXRS14d32gyLYie+5VdawFJAPFONdl5/vdpgNMpTh3pCjUSomZgQuCtHhxGQlzbtnpZtFhIT55nuPA7HZ2Py9SC2sminpMv0=
+  on:
+    branch: master
