@@ -1,9 +1,15 @@
 language: node_js
 node_js:
-  - 6.2.0
-  - 10
+- 6.2.0
+- 10
 env:
   matrix:
-    - REDUX_SAGA_VERSION=^0.11.1
-    - REDUX_SAGA_VERSION=^1.0.0
+  - REDUX_SAGA_VERSION=^0.11.1
+  - REDUX_SAGA_VERSION=^1.0.0
 after_install: npm install redux-saga@${REDUX_SAGA_VERSION}
+deploy:
+  provider: npm
+  email: "$NPM_EMAIL"
+  api_key: "$NPM_TOKEN"
+  on:
+    branch: master
