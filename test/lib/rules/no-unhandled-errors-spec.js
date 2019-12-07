@@ -62,9 +62,10 @@ ruleTester.run("no-unhandled-errors", rule, {
     },
     {
       code: buildTest(
-        "import { takeEvery, takeLatest, throttle } from 'redux-saga'",
+        "import { takeEvery, takeLatest, takeLeading, throttle } from 'redux-saga'",
         "yield takeEvery('ACTION', function*(){});" +
         "yield takeLatest('ACTION', function*(){});" +
+        "yield takeLeading('ACTION', function*(){});" +
         "yield throttle('ACTION', function*(){})"
       )
     }
