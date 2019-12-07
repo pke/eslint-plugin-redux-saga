@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-redux-saga",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "redux-saga eslint rules",
   "author": "Philipp Kursawe <phil.kursawe+npm@gmail.com",
   "contributors": [
@@ -37,7 +37,7 @@
   },
   "devDependencies": {
     "eslint": "5.16.0",
-    "mocha": "~5.2.0",
+    "mocha": "~6.2.2",
     "redux-saga": ">= 0.11.1 < 1 || >= 1.0.0"
   },
   "keywords": [
