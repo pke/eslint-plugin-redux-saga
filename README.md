@@ -1,6 +1,6 @@
 # eslint-plugin-redux-saga
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/pke/eslint-plugin-redux-saga.svg)](https://greenkeeper.io/)
+
 
 [![Build Status](https://img.shields.io/travis/pke/eslint-plugin-redux-saga/master.svg?style=flat-square)](https://travis-ci.org/pke/eslint-plugin-redux-saga)
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-redux-saga.svg?style=flat-square)](https://badge.fury.io/js/eslint-plugin-redux-saga)
