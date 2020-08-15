@@ -1,6 +1,6 @@
 "use strict"
 
-var RuleTester = require("eslint/lib/testers/rule-tester")
+var RuleTester = require("eslint").RuleTester
 var parserOptions = require("./parserOptions")
 
 RuleTester.setDefaultConfig({
