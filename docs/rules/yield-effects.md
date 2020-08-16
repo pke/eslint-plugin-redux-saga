@@ -1,6 +1,6 @@
 # Ensures effects are yielded (yield-effects)
 
-![](https://img.shields.io/badge/-recommended-lightgrey.svg "recommended") ![fixable](https://img.shields.io/badge/-fixable-green.svg "The `--fix` option on the command line automatically fixes problems reported by this rule.")
+![](https://img.shields.io/badge/-recommended-lightgrey.svg "recommended") ![suggestion fixable](https://img.shields.io/badge/-suggestion%20fixable-green.svg "Editors that supports eslint suggestions will provide a fix option")
 
 This rule ensures that all `redux-saga` effects are properly `yield`'ed.
 
@@ -20,4 +20,4 @@ function* bad() {
 }
 ```
 
-The `--fix` option on the command line automatically fixes problems reported by this rule.
+Note: There is no autofix for this rule since it would change the runtime behavior of the code and potentially break things. This would goes against the eslint [best practices for fixes](https://eslint.org/docs/developer-guide/working-with-rules#applying-fixes-1). If you use an editor that supports the eslint [suggestions API](https://eslint.org/docs/developer-guide/working-with-rules#providing-suggestions), however, (for example the [VSCode ESLint plugin](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)), the editor will provide a suggestion for how to fix it.
