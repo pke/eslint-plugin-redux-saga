@@ -1,7 +1,7 @@
 language: node_js
 node_js:
-- 8.10.0
-- 14
+- lts
+- node
 env:
   matrix:
   - REDUX_SAGA_VERSION=^0.11.1
