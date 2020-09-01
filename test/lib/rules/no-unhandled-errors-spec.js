@@ -1,6 +1,6 @@
 "use strict"
 var rule = require("../../../lib/rules/no-unhandled-errors")
-var RuleTester = require("eslint/lib/testers/rule-tester")
+var RuleTester = require("eslint").RuleTester
 
 var ruleTester = new RuleTester()
 

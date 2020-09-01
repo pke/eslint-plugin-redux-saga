@@ -1,6 +1,6 @@
 # eslint-plugin-redux-saga
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/pke/eslint-plugin-redux-saga.svg)](https://greenkeeper.io/)
+
 
 [![Build Status](https://img.shields.io/travis/pke/eslint-plugin-redux-saga/master.svg?style=flat-square)](https://travis-ci.org/pke/eslint-plugin-redux-saga)
 [![npm version](https://img.shields.io/npm/v/eslint-plugin-redux-saga.svg?style=flat-square)](https://badge.fury.io/js/eslint-plugin-redux-saga)
@@ -34,7 +34,7 @@ And add it to your `.eslintrc` file:
 
 | Rule | Description | Recommended | Fixable |
 |-------------|------|-------------|---------|
-| [yield-effects](docs/rules/yield-effects.md) | Ensure effects are yielded | ![recommended](https://img.shields.io/badge/-recommended-lightgrey.svg) | ![fixable](https://img.shields.io/badge/-fixable-green.svg) |
+| [yield-effects](docs/rules/yield-effects.md) | Ensure effects are yielded | ![recommended](https://img.shields.io/badge/-recommended-lightgrey.svg) | ![suggestion fixable](https://img.shields.io/badge/-suggestion%20fixable-green.svg) |
 | [no-yield-in-race](docs/rules/no-yield-in-race.md) | Prevent usage of yield in race entries | ![recommended](https://img.shields.io/badge/-recommended-lightgrey.svg) | ![fixable](https://img.shields.io/badge/-fixable-green.svg)
 | [no-unhandled-errors](docs/rules/no-unhandled-errors.md) | Ensures error handling on sagas | ![recommended](https://img.shields.io/badge/-recommended-lightgrey.svg) |
 

@@ -1,6 +1,6 @@
 "use strict"
 var rule = require("../../../lib/rules/yield-effects")
-var RuleTester = require("eslint/lib/testers/rule-tester")
+var RuleTester = require("eslint").RuleTester
 
 var ruleTester = new RuleTester()
 
@@ -85,23 +85,51 @@ ruleTester.run("yield-effects", rule, {
   invalid: [
     {
       code: buildTest("import { take } from 'redux-saga'", "take('ACTION')"),
-      output: buildTest("import { take } from 'redux-saga'", "yield take('ACTION')"),
-      errors: [{message: "take effect must be yielded"}]
+      errors: [{
+        message: "take effect must be yielded",
+        suggestions: [
+          {
+            desc: "Add yield",
+            output: buildTest("import { take } from 'redux-saga'", "yield take('ACTION')")
+          }
+        ]
+      }]
     },
     {
       code: buildTest("import { delay } from 'redux-saga'", "delay('ACTION')"),
-      output: buildTest("import { delay } from 'redux-saga'", "yield delay('ACTION')"),
-      errors: [{message: "delay effect must be yielded"}]
+      errors: [{
+        message: "delay effect must be yielded",
+        suggestions: [
+          {
+            desc: "Add yield",
+            output: buildTest("import { delay } from 'redux-saga'", "yield delay('ACTION')")
+          }
+        ]
+      }]
     },
     {
       code: buildTest("import { take as t } from 'redux-saga'", "t('ACTION')"),
-      output: buildTest("import { take as t } from 'redux-saga'", "yield t('ACTION')"),
-      errors: [{message: "t (take) effect must be yielded"}]
+      errors: [{
+        message: "t (take) effect must be yielded",
+        suggestions: [
+          {
+            desc: "Add yield",
+            output: buildTest("import { take as t } from 'redux-saga'", "yield t('ACTION')")
+          }
+        ]
+      }]
     },
     {
       code: buildTest("import { delay as d } from 'redux-saga'", "d('ACTION')"),
-      output: buildTest("import { delay as d } from 'redux-saga'", "yield d('ACTION')"),
-      errors: [{message: "d (delay) effect must be yielded"}]
+      errors: [{
+        message: "d (delay) effect must be yielded",
+        suggestions: [
+          {
+            desc: "Add yield",
+            output: buildTest("import { delay as d } from 'redux-saga'", "yield d('ACTION')")
+          }
+        ]
+      }]
     },
     {
       code:
@@ -111,14 +139,21 @@ ruleTester.run("yield-effects", rule, {
         "  call(() => {})" +
         "}" +
         "}",
-      output:
-        "import { call } from 'redux-saga';\n" +
-        "export class FooSaga {" +
-        "static* someSaga() {" +
-        "  yield call(() => {})" +
-        "}" +
-        "}",
-      errors: [{message: "call effect must be yielded"}]
+      errors: [{
+        message: "call effect must be yielded",
+        suggestions: [
+          {
+            desc: "Add yield",
+            output:
+                "import { call } from 'redux-saga';\n" +
+                "export class FooSaga {" +
+                "static* someSaga() {" +
+                "  yield call(() => {})" +
+                "}" +
+                "}"
+          }
+        ]
+      }]
     }
   ]
 })
