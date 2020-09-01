@@ -7,9 +7,11 @@ env:
   - REDUX_SAGA_VERSION=^0.11.1
   - REDUX_SAGA_VERSION=^1.0.0
 after_install: npm install redux-saga@${REDUX_SAGA_VERSION}
-deploy:
-  provider: npm
-  email: "$NPM_EMAIL"
-  api_key: "$NPM_TOKEN"
-  on:
-    branch: master
+jobs:
+  include:
+    - stage: deploy
+      provider: npm
+      email: "$NPM_EMAIL"
+      api_key: "$NPM_TOKEN"
+      on:
+        branch: master
