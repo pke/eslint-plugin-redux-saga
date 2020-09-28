@@ -15,7 +15,7 @@ module.exports = {
   rules: rules,
   configs: {
     recommended: {
-      plugins: ['redux-saga'],
+      plugins: ["redux-saga"],
       rules: {
         "redux-saga/no-yield-in-race": 2,
         "redux-saga/yield-effects": 2,
@@ -23,7 +23,7 @@ module.exports = {
       }
     },
     all: {
-      plugins: ['redux-saga'],
+      plugins: ["redux-saga"],
       rules: allRules
     }
   }
