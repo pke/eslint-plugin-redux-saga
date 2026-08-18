@@ -1,0 +1,54 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Node ${{ matrix.node-version }} / redux-saga ${{ matrix.redux-saga }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node-version:
+          - 22
+          - 24
+        redux-saga:
+          - ^0.11.1
+          - ^1.0.0
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Set up Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install redux-saga ${{ matrix.redux-saga }}
+        run: npm install --no-save --package-lock=false "redux-saga@${{ matrix.redux-saga }}"
+
+      - name: Run tests
+        run: npm test
+
+  required:
+    name: CI required
+    if: ${{ always() }}
+    needs:
+      - test
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify test matrix result
+        env:
+          TEST_RESULT: ${{ needs.test.result }}
+        run: test "$TEST_RESULT" = "success"
